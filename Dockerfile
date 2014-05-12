@@ -1,7 +1,5 @@
-FROM base
-MAINTAINER Arcus "http://arcus.io"
-RUN apt-get -qq update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-7-jre-headless wget
+FROM dockerfile/java
+MAINTAINER Guido Zockoll
 RUN wget -O /tmp/tomcat7.tar.gz http://mirror.cogentco.com/pub/apache/tomcat/tomcat-7/v7.0.53/bin/apache-tomcat-7.0.53.tar.gz
 RUN (cd /opt && tar zxf /tmp/tomcat7.tar.gz)
 RUN (mv /opt/apache-tomcat* /opt/tomcat)
